@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .log {
+            display: none;
+            right: 0;
+            bottom: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .2);
+        }
+        .back {
+            overflow-y: auto;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .back::-webkit-scrollbar {
+            width: 4px;
+            height: 1px;
+        }
+        .back::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #535353;
+        }
+        .back::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: #ededed;
+        }
+        .kuang {
+            display: none;
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .kuang .h {
+            width: 380px;
+            height: 50px;
+            padding: 10px 10px 0;
+            border-bottom: 1px solid #bfbfbf;
+        }
+        .kuang .h a {
+            display: block;
+            width: 5px;
+            height: 5px;
+            float: right;
+            font-size: 5px;
+            color: #bfbfbf;
+        }
+        .kuang .h a:hover {
+            color: blue;
+        }
+        .g-gao {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #535353;
+            position: relative;
+            overflow: hidden;
+        }
+        .g-gao .l {
+            float: left;
+            padding-left: 10px;
+            font-size: 10px;
+            margin-right: 13px;
+        }
+        .g-gao ul {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            float: left;
+            font-size: 10px;
+            list-style: none;
+            transition: all 0.5s;
+        }
+        .box1{
+            margin-left: 380px;
+            width: 30px;
+            height: 30px;
+            background-color: #b3b3b3;
+            position: relative;
+        }
+        .box2 {
+            display: none;
+            position: absolute;
+            top:30px;
+            left: -12px;
+            width: 60px;
+            height: 60px;
+            background-color:sienna;
+            transition: all 0.5s;
+            border: 1px solid blue;
+        }
+        .san {
+            display: none;
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid blue;
+            transition: all 0.5s;
+        }
+        .san2 {
+            display: none;
+            position: absolute;
+            z-index: 22;
+            left: 10px;
+            top: 21px;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-left:5px solid transparent;
+            border-bottom: 5px solid sienna;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="btn()">点击我，出现弹框！</button>
+    <button onclick="gun()">滚动</button>
+    <div id="back" class="back">
+        钱塘江最早见于中国古代的地理名著《山海经》，古名为“浙江”，亦名“渐江”。钱塘江一名原指流经钱唐（塘）县境的河段，民国时期方作全江统称。钱塘江曾有两源之说，南源兰江为主源，集水面积大，从建德市梅城镇（兰江与新安江交汇处）向南进发，溯兰江、衢江、常山港而上，上游马金溪，源头溪流名龙田河，河源位于安徽省休宁县龙田乡江田村青芝埭尖北坡；原北源新安江，河流长，从梅城溯江而上，向西，沿着新安江、千岛湖、渐江、率水、冯村河，河源位于安徽休宁县六股尖，是为最大一级支流。兰江、新安江在建德市梅城镇汇合后至萧山区闻堰镇浦阳江口称富春江。富春江电站以下是受潮汐影响的河流段（又称近口段），在闻 堰纳入浦阳江后至海盐县澉浦镇，是径流与潮流相互作用、冲淤多变的河口段，澉浦以下为河口湾（习称杭州湾），在上海市浦东新 区芦潮港闸与宁波市外游山连线的断面上注入东海。钱塘江跨浙、皖、赣、闽、沪五省（市），全长609千米，流域面积55491平方 千米，其中浙江省境内面积44466.9平方千米。钱塘江流域西北与西南侧与长江水系隔着黄山、天目山，地势西南高、东北低，山丘多、平原少，除富阳以下有大片河口平原外，河谷盆地也散布若干大、小平原，最大的一片是金衢盆地，面积3500平方千米。钱塘江源短流急，从高山峡谷、丘陵平原到河口海湾，支流众多。钱塘江水系是在走向北东和走向北西两组主要断裂线间的构造盆地上发育的，河流多沿两组断裂线形成格子状水系。第三纪中新世以前，汇为向斜盆地中的湖沼，无出海通道。第三纪中新世喜马拉雅造山运动之后，滨海山地下沉，湖水才沿向斜带及断层带向东北流注入东海。第三纪末期，山区的河谷形态已基本定型，钱塘江中上游河道未有大变，但下游河口区岸线变化剧烈。第四纪以后，河口平原地区，受多次海进、海退等影响，河道变化频繁。约六七千年前，最后一次大规模海进时，海水直拍江北岸临安、富阳和南岸绍兴、余姚一带山麓。以后由于长江、钱塘江、浙东山岭和东海浅海区泥沙随山水、潮流挟运沉积，形成钱塘江河口南、北两片广阔的太湖平原和宁绍平原。平原上水道纵横，湖泊密布，并与钱塘江河口相通。六千年前，北岸岸线约在转塘、赭山、澉浦、王盘山、金山、漕泾一线；南岸岸线约在西兴、龛山、孙端、临山、浒山、澥浦一线，喇叭形河口已具雏形。江潮横溢，泥沙堆积两岸，使沿江地面高于内地平原，加上人类活动的影响，逐渐隔断了北岸和部分南岸水流汇入河口的通道。此后随涨、落潮水流往返搬运的泥沙在河口内沉积，形成高于上、下游河床的沙坎。两千五百年前左右，沙坎不断扩大升高，促使潮波变形，最终成就了“八月十八潮，壮观天下无”的钱塘江涌潮。在东晋以前，杭州—金山的喇叭形河口两岸岸线比较平直。此后，澉浦以下的北岸岸线受东南来潮顶冲，在东伸中北退，至明代与现代岸线相近，后退约20千米；南岸岸线向北淤涨成为三北（余姚、慈溪、镇海三市区北部）平原。澉浦上游至杭州的江道，明末以前，行经今萧山南沙地区的南大亹（赭山—龛山），后渐北移至中小亹（今白虎山—赭山），清乾隆二十四年（1759年）稳定在北大亹后迄今未变。原属北岸海宁州的赭山，于嘉庆年间（1796—1820年）方改隶南岸萧山县。北大亹江道仍很宽浅，河槽冲淤多变，岸滩涨、坍迅猛，远非其他河流的河口可比。1968年后，政府与两岸人民通过大规模治江围涂，河口段由顺直向弯曲发展，演变的总趋势是河口渐向外延伸，“沧海桑田”在钱塘江河口得到了最真实的反映。
+    </div>
+    <div class="g-gao">
+        <span class="l">公告：</span>
+        <ul id="ul">
+            <li>钱塘江最早见于中国古代的地理名著</li>
+            <li>钱塘江曾有两源之说</li>
+            <li>古名为“浙江”，亦名“渐江”</li>
+            <li>溯兰江、衢江、常山港而上</li>
+            <li>后至萧山区闻堰镇浦阳</li>
+            <li>钱塘江流域西北与西南侧</li>
+        </ul>
+    </div>
+    <div id="box1" class="box1">
+        <div id="box2" class="box2">
+        
+        </div>
+        <div id="san2" class="san2">
+
+        </div> 
+        <div id="san" class="san">
+
+        </div>
+    </div>
+    <div id="tan" class="log"></div>
+    <div id="kuang" class="kuang">
+        <div class="h">
+            <span>新增用户</span>
+            <a href="javascript::void(0)" onclick="guan()">X</a>
+        </div>
+    </div>
+    <script>
+        //console.log(document.documentElement.scrollHeight);
+       // console.log(window.innerHeight);
+        //console.log(document.documentElement.scrollTop);
+        window.onscroll = function() {
+            if(document.documentElement.scrollTop >= 300){
+                var tan = document.getElementById('tan');
+                var kuang = document.getElementById('kuang');
+                tan.style.display = 'block';
+                kuang.style.display = 'block';
+            }
+            if(document.documentElement.scrollTop < 300){
+                var tan = document.getElementById('tan');
+                var kuang = document.getElementById('kuang');
+                tan.style.display = 'none';
+                kuang.style.display = 'none';
+            }
+        }
+        function btn() {
+            var tan = document.getElementById('tan');
+            var kuang = document.getElementById('kuang');
+            tan.style.display = 'block';
+            kuang.style.display = 'block';
+        }
+        function guan() {
+            var tan = document.getElementById('tan');
+            var kuang = document.getElementById('kuang');
+            tan.style.display = 'none';
+            kuang.style.display = 'none';
+        }
+        function gun() {
+            window.scrollTo(0,2422-625);
+            
+        }
+        var i = 0;
+        var back = document.getElementById('back');
+        var n = back.scrollHeight - back.clientHeight;
+        var start = setInterval(() => {
+                back.scrollTo(0,i);
+                i+=2;
+                if(i >= n){
+                    i=0;
+                }
+            }, 60);
+        var ul = document.getElementById('ul');
+        var m = 0;
+        var h = ul.clientHeight;
+        var gongGao = setInterval(() => {
+            ul.style.top = '-' + m + 'px';
+            m += 30;
+            if( m == h ){
+                m = 0;
+            }
+        }, 2000);
+        ul.onmouseover = function() {
+            clearInterval(gongGao);
+        }
+        ul.onmouseout = function() {
+            gongGao = setInterval(() => {
+            ul.style.top = '-' + m + 'px';
+            m += 30;
+            if( m == 180 ){
+                m = 0;
+            }
+        }, 2000);
+        }
+        back.onmouseover = function() {
+           clearInterval(start);
+        }
+        back.onmouseout = function() {
+            i = back.scrollTop;
+            start = setInterval(() => {
+                back.scrollTo(0,i);
+                i+=2;
+                if(i >= n){
+                    i=0;
+                }
+            }, 60);
+        }
+        
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var san = document.getElementById('san');
+        var san2 = document.getElementById('san2');
+        box1.onmouseover = function() {
+            box2.style.display = 'block';
+            san.style.display = 'block';
+            san2.style.display = 'block';
+        }
+        box1.onmouseout = function() {
+            box2.style.display = 'none';
+            san.style.display = 'none';
+            san2.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
