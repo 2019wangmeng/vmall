@@ -31,7 +31,7 @@
             width: 155px;
             height: 155px;
             border-radius: 50%;
-            border: 5px dotted #b3b3b3;
+            border: 5px solid #b3b3b3;
             margin: auto;
         }
         .miao {
@@ -40,7 +40,7 @@
             top: 0;
             right: 0;
             bottom: 0;
-            width: 155px;
+            width: 152px;
             height: 3px;
             margin: auto;
             background-color: red;
@@ -66,6 +66,115 @@
             height: 5px;
             background-color: #fff;
         }
+        .c1 {
+            position: absolute;
+            top: 19px;
+            left: 128px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c2 {
+            position: absolute;
+            top: 48px;
+            left: 157px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c3 {
+            position: absolute;
+            top: 88px;
+            left: 168px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        
+        .c4 {
+            position: absolute;
+            top: 128px;
+            left: 157px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c5 {
+            position: absolute;
+            top: 157px;
+            left: 128px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c6 {
+            position: absolute;
+            top: 168px;
+            left: 88px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c7 {
+            position: absolute;
+            top: 157px;
+            left: 49px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c8 {
+            position: absolute;
+            top: 128px;
+            left: 19px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c9 {
+            position: absolute;
+            top: 88px;
+            left: 8px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c10 {
+            position: absolute;
+            top: 48px;
+            left: 19px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c11 {
+            position: absolute;
+            top: 19px;
+            left: 48px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        .c12 {
+            position: absolute;
+            top: 8px;
+            left: 88px;
+            background-color: black;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
 
     </style>
 </head>
@@ -77,16 +186,31 @@
                 <div class="miao-l"></div>
             </div>
             <div class="circle"></div>
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+            <div class="c6"></div>
+            <div class="c7"></div>
+            <div class="c8"></div>
+            <div class="c9"></div>
+            <div class="c10"></div>
+            <div class="c11"></div>
+            <div class="c12"></div>
         </div>
     </div>
     <script>
-        var i = 1;
+        var date = new Date();
+        var second = date.getSeconds();
+        var i = 46 + second;
         var miao = document.getElementById('miao');
+        miao.style.transform = 'rotate('+6*i+'deg)';
         setInterval(() => {
             miao.style.transform = 'rotate('+6*i+'deg)';
             i++;
-            if( i >= 360){
-                i = 1;
+            if( i >= 106){
+                i = 46;
             }
         }, 1000);
     </script>
